@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block title %} Formulario 3 {% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-10 col-lg-8 mx-auto">
+            <form class="bg-light py-3 px-3 shadow rounded">
+                <h1>Formulario 3</h1>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Nombre</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese su nombre">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlInput1">Email</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese su email">
+              </div>
+                <div class="form-group">
+                <label for="exampleFormControlInput1">Direccion</label>
+                <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese su direccion">
+              </div>
+              <div class="form-group">
+                <label for="exampleFormControlTextarea1">Telefono</label>
+                <input type="number" class="form-control" id="exampleFormControlInput1" placeholder="Ingrese su numero">
+              </div>
+                <button class="form-control btn btn-info">Enviar</button>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
