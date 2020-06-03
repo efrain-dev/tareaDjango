@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %} {{project.nombre}} {% endblock %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-10 col-lg-8 mx-auto bg-light  py-3 px-3 shadow rounded">
+            <div class="" style="text-align: center">
+            <h1>Crear Productos o Editar</h1>
+            </div>
+           <div class="list-group">
+               <form class="bg-light  py-3 px-3 shadow rounded" method="post" >
+                   {% csrf_token %}{{ form|crispy }}
+                <button type="submit" class="form-control btn btn-info">Guardar</button>
+               </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

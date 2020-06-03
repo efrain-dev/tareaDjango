@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block title %} Clientes {% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-10 col-lg-10 mx-auto bg-light  py-3 px-3 shadow rounded">
+            <div class="d-flex justify-content-around align-items-center" style="text-align: center">
+                <h1>Clientes</h1>
+                <a class="btn btn-primary" href="{% url 'cliente.create' %}">Ingresar un Nuevo Cliente</a>
+            </div>
+
+           <div class="list-group">
+                <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Direccion</th>
+                          <th scope="col">Email</th>
+                          <th scope="col">Telefono</th>
+                          <th style="text-align: center;" scope="col">Opcion</th>
+                        </tr>
+                      </thead>
+                    <hr>
+                        <tbody>
+                       {% for cliente in object_list %}
+                        <tr>
+                          <th scope="row">{{cliente.id}}</th>
+                          <td>{{cliente.nombre}}</td>
+                          <td>{{cliente.direccion}}</td>
+                          <td>{{cliente.email}}</td>
+                          <td>{{cliente.telefono}}</td>
+                          <td style="text-align: center;">
+                              <a class="btn btn-info" href="{% url 'cliente.edit' cliente.id %}">Editar</a>
+                              <a class="btn btn-danger" href="{% url 'cliente.delete' cliente.id %}">Eliminar</a>
+                          </td>
+                        </tr>
+                      {% endfor %}
+                       </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

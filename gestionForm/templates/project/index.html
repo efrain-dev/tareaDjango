@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %} Proyectos {% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-10 col-lg-8 mx-auto bg-light  py-3 px-3 shadow rounded">
+            <div class="d-flex justify-content-around align-items-center" style="text-align: center">
+                <h1>Proyectos</h1>
+                <a class="btn btn-primary" href="/project/create">Crear proyecto Nuevo</a>
+            </div>
+
+           <div class="list-group">
+                <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Descripcion</th>
+                          <th scope="col">Estado</th>
+                          <th style="text-align: center;" scope="col">Opcion</th>
+                        </tr>
+                      </thead>
+                    <hr>
+                        <tbody>
+                       {% for project in object_list %}
+                        <tr>
+                          <th scope="row">{{project.id}}</th>
+                          <td>{{project.nombre}}</td>
+                          <td>{{project.descripcion}}</td>
+                          <td>{{project.estado}}</td>
+                          <td style="text-align: center;">
+                              <a class="btn btn-info" href="{% url 'project.edit' project.id %}">Editar</a>
+                              <a class="btn btn-danger" href="{% url 'project.delete' project.id %}">Eliminar</a>
+                          </td>
+                        </tr>
+                      {% endfor %}
+                       </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

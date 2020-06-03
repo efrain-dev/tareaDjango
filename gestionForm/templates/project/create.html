@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block title %} {{project.nombre}} {% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-10 col-lg-8 mx-auto bg-light  py-3 px-3 shadow rounded">
+            <div class="" style="text-align: center">
+            <h1>Crear Proyectos o Editar</h1>
+            </div>
+           <div class="list-group">
+               <form class="bg-light  py-3 px-3 shadow rounded" method="post" >
+                   {% csrf_token %}
+                  <div class="form-group row">
+                    <label for="staticEmail" class="col-sm-2 col-form-label">Nombre</label>
+                    <div class="col-sm-10">
+                      <input type="text"  class="form-control" placeholder="Ingrese el nombre" name="nombre" value="{% if project %}{{ project.nombre }} {% endif %} ">
+                    </div>
+                  </div>
+                  <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Descripcion</label>
+                    <div class="col-sm-10">
+                      <input type="text" name="descripcion" placeholder="Ingrese la descripcion" class="form-control" id="inputPassword" value="{% if project %}{{ project.descripcion }} {% endif %} ">
+                    </div>
+                  </div>
+                   <div class="form-group row">
+                    <label for="inputPassword" class="col-sm-2 col-form-label">Estado</label>
+                       <div class="col-sm-10">
+                            <select name="estado" class="form-control" id="subjet" value="">
+                                <option selected value="Procesando">Procesando</option>
+                                <option value="Terminado">Terminado</option>
+                                <option value="Cancelado">Cancelado</option>
+                            </select>
+                       </div>
+                  </div>
+                <button type="submit" class="form-control btn btn-info">Guardar</button>
+               </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

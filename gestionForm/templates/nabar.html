@@ -11,14 +11,14 @@
                   </li>
                   <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                      Menu de Formularios
+                      Menu
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                      <a class="dropdown-item" href="/form1">Formulario 1</a>
-                      <a class="dropdown-item" href="/form2">Formulario 2</a>
-                      <a class="dropdown-item" href="/form3">Formulario 3</a>
-                      <a class="dropdown-item" href="/form4">Formulario 4</a>
-                      <a class="dropdown-item" href="/form5">Formulario 5</a>
+                      <a class="dropdown-item" href="{% url 'project.index' %}">Proyectos</a>
+                      <a class="dropdown-item" href="{% url 'cliente.index' %}">Clientes</a>
+                      <a class="dropdown-item" href="{% url 'marca.index' %}">Marcas</a>
+                      <a class="dropdown-item" href="{% url 'producto.index' %}">Productos</a>
+                      <a class="dropdown-item" href="{% url 'trabajador.index' %}">Trabajadores</a>
                     </div>
                   </li>
                 </ul>

@@ -27,6 +27,7 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 # Application definition
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -37,7 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'tareaDjango',
     'gestionForm',
+    'crispy_forms',
+
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -54,7 +58,7 @@ ROOT_URLCONF = 'tareaDjango.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['C:/Users/efrai/OneDrive/laragon/ProyectoDjango/tareaDjango/tareaDjango/templates'],
+        'DIRS': ['C:/Users/efrai/OneDrive/laragon/ProyectoDjango/tareaDjango/gestionForm/templates'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -72,6 +76,18 @@ WSGI_APPLICATION = 'tareaDjango.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'form',
+#         'USER': 'root',
+#         'PASSWORD': '',
+#         'HOST': 'localhost',
+#         'DATABASE_PORT': '3306',
+#
+#     }
+#
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
@@ -80,10 +96,9 @@ DATABASES = {
         'PASSWORD': '',
         'HOST': 'localhost',
         'DATABASE_PORT': '3306',
-
     }
-
 }
+
 
 # Password validation
 # https://docs.djangoproject.com/en/3.0/ref/settings/#auth-password-validators
@@ -106,7 +121,9 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/3.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'es-us'
+
 
 TIME_ZONE = 'UTC'
 

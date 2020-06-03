@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% block title %} Proyectos {% endblock %}
+
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-10 col-lg-8 mx-auto bg-light  py-3 px-3 shadow rounded">
+            <div class="d-flex justify-content-around align-items-center" style="text-align: center">
+                <h1>Productos</h1>
+                <a class="btn btn-primary" href="{% url 'producto.create' %}">Crear producto Nuevo</a>
+            </div>
+
+           <div class="list-group">
+                <table class="table table-hover">
+                      <thead>
+                        <tr>
+                          <th scope="col">#</th>
+                          <th scope="col">Nombre</th>
+                          <th scope="col">Descripcion</th>
+                          <th scope="col">Cantidad</th>
+                          <th scope="col">Precio</th>
+                          <th scope="col">Marca</th>
+                          <th style="text-align: center;" scope="col">Opcion</th>
+                        </tr>
+                      </thead>
+                    <hr>
+                        <tbody>
+                       {% for producto in object_list %}
+                        <tr>
+                          <th scope="row">{{project.id}}</th>
+                          <td>{{producto.nombre}}</td>
+                          <td>{{producto.descripcion}}</td>
+                          <td>{{producto.cantidad}}</td>
+                          <td>{{producto.precio}}</td>
+                          <td>{{producto.marca.nombre}}</td>
+                          <td style="text-align: center;">
+                              <a class="btn btn-info" href="{% url 'producto.edit' producto.id %}">Editar</a>
+                                  <a class="btn btn-danger" href="{% url 'producto.delete' producto.id %}">Eliminar</a>
+                          </td>
+                        </tr>
+                      {% endfor %}
+                       </tbody>
+                    </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
